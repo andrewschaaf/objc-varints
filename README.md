@@ -7,3 +7,6 @@ This is the same [varint encoding that protobuf uses](https://developers.google.
     
     [Varint128 dataWithUnsignedInt:...]
     [Varint128 dataWithUnsignedInteger:...]
+
+
+## License: MIT

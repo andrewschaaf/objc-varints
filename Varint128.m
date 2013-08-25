@@ -3,10 +3,10 @@
 @implementation Varint128
 
 + (NSData *)dataWithUnsignedInt:(unsigned int)value {
-    return [self dataWithUnsignedInteger:value];
+    return [self dataWithUInt32:value];
 }
 
-+ (NSData *)dataWithUnsignedInteger:(NSUInteger)x {
++ (NSData *)dataWithUInt32:(UInt32)x {
     uint8_t bytes[5];
     int i = 0;
     bytes[0] = 0;

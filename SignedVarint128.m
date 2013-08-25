@@ -9,7 +9,7 @@
 
 + (NSData *)dataWithSInt32:(SInt32)value {
     UInt32 encoded = (UInt32)((value << 1) ^ (value >> 31));
-    return [Varint128 dataWithUnsignedInteger:encoded];
+    return [Varint128 dataWithUInt32:encoded];
 }
 
 @end

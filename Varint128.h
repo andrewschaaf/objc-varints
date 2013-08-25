@@ -3,6 +3,6 @@
 @interface Varint128 : NSObject
 
 + (NSData *)dataWithUnsignedInt:(unsigned int)value;
-+ (NSData *)dataWithUnsignedInteger:(NSUInteger)value;
++ (NSData *)dataWithUInt32:(UInt32)value;
 
 @end

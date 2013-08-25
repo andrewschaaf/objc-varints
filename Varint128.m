@@ -3,7 +3,7 @@
 @implementation Varint128
 
 + (NSData *)dataWithUnsignedInt:(unsigned int)value {
-    return [NSData data];
+    return [self dataWithUnsignedInteger:value];
 }
 
 + (NSData *)dataWithUnsignedInteger:(NSUInteger)x {

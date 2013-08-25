@@ -4,6 +4,15 @@
 SPEC_BEGIN(Varint128Spec)
 
 describe(@"Varint128", ^{
+
+    describe(@"+dataWithUnsignedInt", ^{
+        it(@"uses +dataWithUnsignedInteger", ^{
+            NSData *expectedData = [@"Foo" dataUsingEncoding:NSUTF8StringEncoding];
+            [[Varint128 stubAndReturn:expectedData] dataWithUnsignedInteger:123];
+            [[[Varint128 dataWithUnsignedInt:123] should] equal:expectedData];
+        });
+    });
+
     describe(@"+dataWithUnsignedInteger:", ^{
         
         describe(@"introductory examples", ^{

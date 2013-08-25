@@ -78,6 +78,15 @@ describe(@"Varint128", ^{
                 [[[Varint128 dataWithUnsignedInteger:31415926] should] equal:data];
             });
 
+            // (2**32 - 2) = 0b11111111111111111111111111111110
+            //             = little_endian_128(" 1111110  1111111  1111111  1111111  0001111")
+            //             =         varint128("11111110 11111111 11111111 11111111 00001111")
+            it(@"maps (2**32 - 2) -> FE FF FF FF 0F", ^{
+                uint8_t bytes[5] = {0xFE, 0xFF, 0xFF, 0xFF, 0x0F};
+                NSData *data = [NSData dataWithBytes:bytes length:5];
+                [[[Varint128 dataWithUnsignedInteger:4294967294] should] equal:data];
+            });
+
             // (2**32 - 1) = 0b11111111111111111111111111111111
             //             = little_endian_128(" 1111111  1111111  1111111  1111111  0001111")
             //             =         varint128("11111111 11111111 11111111 11111111 00001111")

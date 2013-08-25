@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0062FE3217CA5AE80025AB49 /* Varint128Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062FE3117CA5AE80025AB49 /* Varint128Spec.m */; };
 		0062FE3517CA5B3E0025AB49 /* Varint128.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062FE3417CA5B3E0025AB49 /* Varint128.m */; };
+		00C22E3617CABD6300DA6A61 /* SignedVarint128.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C22E3517CABD6300DA6A61 /* SignedVarint128.m */; };
+		00C22E3817CABDEF00DA6A61 /* SignedVarint128Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C22E3717CABDEF00DA6A61 /* SignedVarint128Spec.m */; };
 		00C2310A17CA59C800D6BD8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2310917CA59C800D6BD8B /* Cocoa.framework */; };
 		00C2311417CA59C800D6BD8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00C2311217CA59C800D6BD8B /* InfoPlist.strings */; };
 		00C2311617CA59C800D6BD8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2311517CA59C800D6BD8B /* main.m */; };
@@ -35,6 +37,9 @@
 		0062FE3117CA5AE80025AB49 /* Varint128Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Varint128Spec.m; sourceTree = "<group>"; };
 		0062FE3317CA5B3E0025AB49 /* Varint128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Varint128.h; path = ../../Varint128.h; sourceTree = "<group>"; };
 		0062FE3417CA5B3E0025AB49 /* Varint128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Varint128.m; path = ../../Varint128.m; sourceTree = "<group>"; };
+		00C22E3417CABD6300DA6A61 /* SignedVarint128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignedVarint128.h; path = ../../SignedVarint128.h; sourceTree = "<group>"; };
+		00C22E3517CABD6300DA6A61 /* SignedVarint128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignedVarint128.m; path = ../../SignedVarint128.m; sourceTree = "<group>"; };
+		00C22E3717CABDEF00DA6A61 /* SignedVarint128Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignedVarint128Spec.m; sourceTree = "<group>"; };
 		00C2310617CA59C800D6BD8B /* Varints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Varints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C2310917CA59C800D6BD8B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		00C2310C17CA59C800D6BD8B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -124,6 +129,8 @@
 			children = (
 				0062FE3317CA5B3E0025AB49 /* Varint128.h */,
 				0062FE3417CA5B3E0025AB49 /* Varint128.m */,
+				00C22E3417CABD6300DA6A61 /* SignedVarint128.h */,
+				00C22E3517CABD6300DA6A61 /* SignedVarint128.m */,
 				00C2311B17CA59C800D6BD8B /* AppDelegate.h */,
 				00C2311C17CA59C800D6BD8B /* AppDelegate.m */,
 				00C2311E17CA59C800D6BD8B /* MainMenu.xib */,
@@ -149,6 +156,7 @@
 			children = (
 				00C2312D17CA59C800D6BD8B /* Supporting Files */,
 				0062FE3117CA5AE80025AB49 /* Varint128Spec.m */,
+				00C22E3717CABDEF00DA6A61 /* SignedVarint128Spec.m */,
 			);
 			path = VarintsTests;
 			sourceTree = "<group>";
@@ -312,6 +320,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0062FE3217CA5AE80025AB49 /* Varint128Spec.m in Sources */,
+				00C22E3617CABD6300DA6A61 /* SignedVarint128.m in Sources */,
+				00C22E3817CABDEF00DA6A61 /* SignedVarint128Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

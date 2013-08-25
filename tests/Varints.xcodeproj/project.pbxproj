@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0062FE3217CA5AE80025AB49 /* Varint128Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062FE3117CA5AE80025AB49 /* Varint128Spec.m */; };
+		0062FE3517CA5B3E0025AB49 /* Varint128.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062FE3417CA5B3E0025AB49 /* Varint128.m */; };
+		00C2310A17CA59C800D6BD8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2310917CA59C800D6BD8B /* Cocoa.framework */; };
+		00C2311417CA59C800D6BD8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00C2311217CA59C800D6BD8B /* InfoPlist.strings */; };
+		00C2311617CA59C800D6BD8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2311517CA59C800D6BD8B /* main.m */; };
+		00C2311A17CA59C800D6BD8B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 00C2311817CA59C800D6BD8B /* Credits.rtf */; };
+		00C2311D17CA59C800D6BD8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2311C17CA59C800D6BD8B /* AppDelegate.m */; };
+		00C2312017CA59C800D6BD8B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00C2311E17CA59C800D6BD8B /* MainMenu.xib */; };
+		00C2312817CA59C800D6BD8B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2312717CA59C800D6BD8B /* SenTestingKit.framework */; };
+		00C2312917CA59C800D6BD8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2310917CA59C800D6BD8B /* Cocoa.framework */; };
+		00C2313117CA59C800D6BD8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00C2312F17CA59C800D6BD8B /* InfoPlist.strings */; };
+		E800526B7EE64F388891B7F7 /* libPods-VarintsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BADAF8D81E664ED8BB516B8B /* libPods-VarintsTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00C2312A17CA59C800D6BD8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C230FE17CA59C800D6BD8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00C2310517CA59C800D6BD8B;
+			remoteInfo = Varints;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0062FE3117CA5AE80025AB49 /* Varint128Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Varint128Spec.m; sourceTree = "<group>"; };
+		0062FE3317CA5B3E0025AB49 /* Varint128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Varint128.h; path = ../../Varint128.h; sourceTree = "<group>"; };
+		0062FE3417CA5B3E0025AB49 /* Varint128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Varint128.m; path = ../../Varint128.m; sourceTree = "<group>"; };
+		00C2310617CA59C800D6BD8B /* Varints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Varints.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C2310917CA59C800D6BD8B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		00C2310C17CA59C800D6BD8B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		00C2310D17CA59C800D6BD8B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		00C2310E17CA59C800D6BD8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00C2311117CA59C800D6BD8B /* Varints-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Varints-Info.plist"; sourceTree = "<group>"; };
+		00C2311317CA59C800D6BD8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00C2311517CA59C800D6BD8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00C2311717CA59C800D6BD8B /* Varints-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Varints-Prefix.pch"; sourceTree = "<group>"; };
+		00C2311917CA59C800D6BD8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		00C2311B17CA59C800D6BD8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		00C2311C17CA59C800D6BD8B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		00C2311F17CA59C800D6BD8B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		00C2312617CA59C800D6BD8B /* VarintsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VarintsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C2312717CA59C800D6BD8B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		00C2312E17CA59C800D6BD8B /* VarintsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VarintsTests-Info.plist"; sourceTree = "<group>"; };
+		00C2313017CA59C800D6BD8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9D0568C2D51A4DF597B333DD /* Pods-VarintsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarintsTests.xcconfig"; path = "Pods/Pods-VarintsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		BADAF8D81E664ED8BB516B8B /* libPods-VarintsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VarintsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00C2310317CA59C800D6BD8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2310A17CA59C800D6BD8B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C2312217CA59C800D6BD8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2312817CA59C800D6BD8B /* SenTestingKit.framework in Frameworks */,
+				00C2312917CA59C800D6BD8B /* Cocoa.framework in Frameworks */,
+				E800526B7EE64F388891B7F7 /* libPods-VarintsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00C230FD17CA59C800D6BD8B = {
+			isa = PBXGroup;
+			children = (
+				00C2310F17CA59C800D6BD8B /* Varints */,
+				00C2312C17CA59C800D6BD8B /* VarintsTests */,
+				00C2310817CA59C800D6BD8B /* Frameworks */,
+				00C2310717CA59C800D6BD8B /* Products */,
+				9D0568C2D51A4DF597B333DD /* Pods-VarintsTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		00C2310717CA59C800D6BD8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00C2310617CA59C800D6BD8B /* Varints.app */,
+				00C2312617CA59C800D6BD8B /* VarintsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00C2310817CA59C800D6BD8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00C2310917CA59C800D6BD8B /* Cocoa.framework */,
+				00C2312717CA59C800D6BD8B /* SenTestingKit.framework */,
+				00C2310B17CA59C800D6BD8B /* Other Frameworks */,
+				BADAF8D81E664ED8BB516B8B /* libPods-VarintsTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00C2310B17CA59C800D6BD8B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00C2310C17CA59C800D6BD8B /* AppKit.framework */,
+				00C2310D17CA59C800D6BD8B /* CoreData.framework */,
+				00C2310E17CA59C800D6BD8B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		00C2310F17CA59C800D6BD8B /* Varints */ = {
+			isa = PBXGroup;
+			children = (
+				0062FE3317CA5B3E0025AB49 /* Varint128.h */,
+				0062FE3417CA5B3E0025AB49 /* Varint128.m */,
+				00C2311B17CA59C800D6BD8B /* AppDelegate.h */,
+				00C2311C17CA59C800D6BD8B /* AppDelegate.m */,
+				00C2311E17CA59C800D6BD8B /* MainMenu.xib */,
+				00C2311017CA59C800D6BD8B /* Supporting Files */,
+			);
+			path = Varints;
+			sourceTree = "<group>";
+		};
+		00C2311017CA59C800D6BD8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00C2311117CA59C800D6BD8B /* Varints-Info.plist */,
+				00C2311217CA59C800D6BD8B /* InfoPlist.strings */,
+				00C2311517CA59C800D6BD8B /* main.m */,
+				00C2311717CA59C800D6BD8B /* Varints-Prefix.pch */,
+				00C2311817CA59C800D6BD8B /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00C2312C17CA59C800D6BD8B /* VarintsTests */ = {
+			isa = PBXGroup;
+			children = (
+				00C2312D17CA59C800D6BD8B /* Supporting Files */,
+				0062FE3117CA5AE80025AB49 /* Varint128Spec.m */,
+			);
+			path = VarintsTests;
+			sourceTree = "<group>";
+		};
+		00C2312D17CA59C800D6BD8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00C2312E17CA59C800D6BD8B /* VarintsTests-Info.plist */,
+				00C2312F17CA59C800D6BD8B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00C2310517CA59C800D6BD8B /* Varints */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C2313717CA59C800D6BD8B /* Build configuration list for PBXNativeTarget "Varints" */;
+			buildPhases = (
+				00C2310217CA59C800D6BD8B /* Sources */,
+				00C2310317CA59C800D6BD8B /* Frameworks */,
+				00C2310417CA59C800D6BD8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Varints;
+			productName = Varints;
+			productReference = 00C2310617CA59C800D6BD8B /* Varints.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00C2312517CA59C800D6BD8B /* VarintsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C2313A17CA59C800D6BD8B /* Build configuration list for PBXNativeTarget "VarintsTests" */;
+			buildPhases = (
+				F0858FF35AA548A8BB086BAA /* Check Pods Manifest.lock */,
+				00C2312117CA59C800D6BD8B /* Sources */,
+				00C2312217CA59C800D6BD8B /* Frameworks */,
+				00C2312317CA59C800D6BD8B /* Resources */,
+				00C2312417CA59C800D6BD8B /* ShellScript */,
+				C01FAFEFCA0640D4B47390C1 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00C2312B17CA59C800D6BD8B /* PBXTargetDependency */,
+			);
+			name = VarintsTests;
+			productName = VarintsTests;
+			productReference = 00C2312617CA59C800D6BD8B /* VarintsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00C230FE17CA59C800D6BD8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 00C2310117CA59C800D6BD8B /* Build configuration list for PBXProject "Varints" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 00C230FD17CA59C800D6BD8B;
+			productRefGroup = 00C2310717CA59C800D6BD8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00C2310517CA59C800D6BD8B /* Varints */,
+				00C2312517CA59C800D6BD8B /* VarintsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00C2310417CA59C800D6BD8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2311417CA59C800D6BD8B /* InfoPlist.strings in Resources */,
+				00C2311A17CA59C800D6BD8B /* Credits.rtf in Resources */,
+				00C2312017CA59C800D6BD8B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C2312317CA59C800D6BD8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2313117CA59C800D6BD8B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00C2312417CA59C800D6BD8B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		C01FAFEFCA0640D4B47390C1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-VarintsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0858FF35AA548A8BB086BAA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00C2310217CA59C800D6BD8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2311617CA59C800D6BD8B /* main.m in Sources */,
+				00C2311D17CA59C800D6BD8B /* AppDelegate.m in Sources */,
+				0062FE3517CA5B3E0025AB49 /* Varint128.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C2312117CA59C800D6BD8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0062FE3217CA5AE80025AB49 /* Varint128Spec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00C2312B17CA59C800D6BD8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00C2310517CA59C800D6BD8B /* Varints */;
+			targetProxy = 00C2312A17CA59C800D6BD8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00C2311217CA59C800D6BD8B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00C2311317CA59C800D6BD8B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		00C2311817CA59C800D6BD8B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00C2311917CA59C800D6BD8B /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		00C2311E17CA59C800D6BD8B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00C2311F17CA59C800D6BD8B /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		00C2312F17CA59C800D6BD8B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00C2313017CA59C800D6BD8B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00C2313517CA59C800D6BD8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		00C2313617CA59C800D6BD8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		00C2313817CA59C800D6BD8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Varints/Varints-Prefix.pch";
+				INFOPLIST_FILE = "Varints/Varints-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		00C2313917CA59C800D6BD8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Varints/Varints-Prefix.pch";
+				INFOPLIST_FILE = "Varints/Varints-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		00C2313B17CA59C800D6BD8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D0568C2D51A4DF597B333DD /* Pods-VarintsTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Varints.app/Contents/MacOS/Varints";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Varints/Varints-Prefix.pch";
+				INFOPLIST_FILE = "VarintsTests/VarintsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		00C2313C17CA59C800D6BD8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D0568C2D51A4DF597B333DD /* Pods-VarintsTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Varints.app/Contents/MacOS/Varints";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Varints/Varints-Prefix.pch";
+				INFOPLIST_FILE = "VarintsTests/VarintsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00C2310117CA59C800D6BD8B /* Build configuration list for PBXProject "Varints" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C2313517CA59C800D6BD8B /* Debug */,
+				00C2313617CA59C800D6BD8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00C2313717CA59C800D6BD8B /* Build configuration list for PBXNativeTarget "Varints" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C2313817CA59C800D6BD8B /* Debug */,
+				00C2313917CA59C800D6BD8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00C2313A17CA59C800D6BD8B /* Build configuration list for PBXNativeTarget "VarintsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C2313B17CA59C800D6BD8B /* Debug */,
+				00C2313C17CA59C800D6BD8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00C230FE17CA59C800D6BD8B /* Project object */;
+}

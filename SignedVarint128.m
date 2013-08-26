@@ -12,4 +12,9 @@
     return [Varint128 dataWithUInt32:encoded];
 }
 
++ (NSData *)dataWithSInt64:(SInt64)value {
+    UInt64 encoded = (UInt64)((value << 1) ^ (value >> 63));
+    return [Varint128 dataWithUInt64:encoded];
+}
+
 @end

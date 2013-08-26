@@ -9,6 +9,7 @@ and/or
 
     + (NSData *)dataWithUnsignedInt:(unsigned int)value;
     + (NSData *)dataWithUInt32:(UInt32)value;
+    + (NSData *)dataWithUInt64:(UInt64)value;
 
 
 ## SignedVarint128
@@ -22,6 +23,7 @@ and/or
 
     + (NSData *)dataWithInt:(int)value;
     + (NSData *)dataWithSInt32:(SInt32)value;
+    + (NSData *)dataWithSInt64:(SInt64)value;
 
 
 ## License: MIT

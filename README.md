@@ -7,9 +7,11 @@ Read [Google's introduction](https://developers.google.com/protocol-buffers/docs
 and/or
 [my didactic Varint128Spec.m](https://github.com/andrewschaaf/objc-varints/blob/master/tests/VarintsTests/Varint128Spec.m).
 
-    + (NSData *)dataWithUnsignedInt:(unsigned int)value;
-    + (NSData *)dataWithUInt32:(UInt32)value;
-    + (NSData *)dataWithUInt64:(UInt64)value;
+```objc
++ (NSData *)dataWithUnsignedInt:(unsigned int)value;
++ (NSData *)dataWithUInt32:(UInt32)value;
++ (NSData *)dataWithUInt64:(UInt64)value;
+```
 
 
 ## SignedVarint128
@@ -21,9 +23,11 @@ See
 and/or
 [SignedVarint128Spec.m](https://github.com/andrewschaaf/objc-varints/blob/master/tests/VarintsTests/SignedVarint128Spec.m).
 
-    + (NSData *)dataWithInt:(int)value;
-    + (NSData *)dataWithSInt32:(SInt32)value;
-    + (NSData *)dataWithSInt64:(SInt64)value;
+```objc
++ (NSData *)dataWithInt:(int)value;
++ (NSData *)dataWithSInt32:(SInt32)value;
++ (NSData *)dataWithSInt64:(SInt64)value;
+```
 
 
 ## License: MIT

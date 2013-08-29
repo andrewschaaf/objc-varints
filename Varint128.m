@@ -38,4 +38,36 @@
     return [NSData dataWithBytes:bytes length:i];
 }
 
++ (UInt32)decode32FromBytes:(const void *)bytes offset:(UInt32 *)offsetPointer {
+    UInt8 *octets = (UInt8 *)bytes;
+    UInt32 offset = *offsetPointer;
+    UInt32 result = 0;
+    int shift = 0;
+    while(YES) {
+        result += ((octets[offset] & 0x7F) << shift);
+        if (octets[offset] < 128) {
+            *offsetPointer = offset + 1;
+            return result;
+        }
+        offset++;
+        shift += 7;
+    }
+}
+
++ (UInt64)decode64FromBytes:(const void *)bytes offset:(UInt32 *)offsetPointer {
+    UInt8 *octets = (UInt8 *)bytes;
+    UInt32 offset = *offsetPointer;
+    UInt64 result = 0;
+    int shift = 0;
+    while(YES) {
+        result += (((UInt64)octets[offset] & 0x7F) << shift);
+        if (octets[offset] < 128) {
+            *offsetPointer = offset + 1;
+            return result;
+        }
+        offset++;
+        shift += 7;
+    }
+}
+
 @end

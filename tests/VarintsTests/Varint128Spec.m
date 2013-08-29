@@ -231,6 +231,235 @@ describe(@"Varint128", ^{
             });
         });
     });
+
+    describe(@"+decode32FromBytes:offset:", ^{
+
+        describe(@"introductory examples", ^{
+
+            it(@"maps 00 -> 0 and increments the offset", ^{
+                uint8_t bytes[1] = {0};
+                NSData *data = [NSData dataWithBytes:bytes length:1];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(0)];
+                [[theValue(offset) should] equal:theValue(1)];
+            });
+
+            it(@"maps 01 -> 1 and increments the offset", ^{
+                uint8_t bytes[1] = {1};
+                NSData *data = [NSData dataWithBytes:bytes length:1];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(1)];
+                [[theValue(offset) should] equal:theValue(1)];
+            });
+
+            it(@"maps 7F -> 127 and increments the offset", ^{
+                uint8_t bytes[1] = {0x7F};
+                NSData *data = [NSData dataWithBytes:bytes length:1];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(127)];
+                [[theValue(offset) should] equal:theValue(1)];
+            });
+
+            it(@"maps 80 01 -> 128 and increments the offset", ^{
+                uint8_t bytes[2] = {0x80, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:2];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(128)];
+                [[theValue(offset) should] equal:theValue(2)];
+            });
+
+            it(@"maps 82 01 -> 130 and increments the offset", ^{
+                uint8_t bytes[2] = {0x82, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:2];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(130)];
+                [[theValue(offset) should] equal:theValue(2)];
+            });
+
+            it(@"maps 80 80 01 -> 128**2 and increments the offset", ^{
+                uint8_t bytes[3] = {0x80, 0x80, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:3];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(128 * 128)];
+                [[theValue(offset) should] equal:theValue(3)];
+            });
+
+            it(@"maps AC 02 -> 300 and increments the offset", ^{
+                uint8_t bytes[2] = {0xAC, 0x02};
+                NSData *data = [NSData dataWithBytes:bytes length:2];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(300)];
+                [[theValue(offset) should] equal:theValue(2)];
+            });
+
+            it(@"maps F6 BC FD 0E -> 31415926 and increments the offset", ^{
+                uint8_t bytes[4] = {0xF6, 0xBC, 0xFD, 0x0E};
+                NSData *data = [NSData dataWithBytes:bytes length:4];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(31415926)];
+                [[theValue(offset) should] equal:theValue(4)];
+            });
+
+            it(@"maps FE FF FF FF 0F -> (2**32 - 2) and increments the offset", ^{
+                uint8_t bytes[5] = {0xFE, 0xFF, 0xFF, 0xFF, 0x0F};
+                NSData *data = [NSData dataWithBytes:bytes length:5];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(4294967294)];
+                [[theValue(offset) should] equal:theValue(5)];
+            });
+
+            it(@"maps FF FF FF FF 0F -> (2**32 - 1) and increments the offset", ^{
+                uint8_t bytes[5] = {0xFF, 0xFF, 0xFF, 0xFF, 0x0F};
+                NSData *data = [NSData dataWithBytes:bytes length:5];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(4294967295)];
+                [[theValue(offset) should] equal:theValue(5)];
+            });
+        });
+
+        describe(@"larger powers of two", ^{
+
+            it(@"maps 80 80 80 01 -> 128**3 and increments the offset", ^{
+                uint8_t bytes[4] = {0x80, 0x80, 0x80, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:4];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(128 * 128 * 128)];
+                [[theValue(offset) should] equal:theValue(4)];
+            });
+
+            it(@"maps 80 80 80 80 01 -> 128**4 and increments the offset", ^{
+                uint8_t bytes[5] = {0x80, 0x80, 0x80, 0x80, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:5];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode32FromBytes:data.bytes offset:&offset]) should] equal:theValue(128 * 128 * 128 * 128)];
+                [[theValue(offset) should] equal:theValue(5)];
+            });
+        });
+    });
+
+    describe(@"+decode64FromBytes:offset:", ^{
+
+        describe(@"inputs >= 2**32", ^{
+
+            it(@"maps ((80 four times) + 0x10) -> 2**32 and increments the offset", ^{
+                uint8_t bytes[5] = {0x80, 0x80, 0x80, 0x80, 0x10};
+                NSData *data = [NSData dataWithBytes:bytes length:5];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(4294967296)];
+                [[theValue(offset) should] equal:theValue(5)];
+            });
+
+            it(@"maps ((FF nine times) + 01) -> (2**64 - 1) and increments the offset", ^{
+                uint8_t bytes[10] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:10];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(18446744073709551615ull)];
+                [[theValue(offset) should] equal:theValue(10)];
+            });
+        });
+
+        describe(@"introductory examples", ^{
+
+            it(@"maps 00 -> 0 and increments the offset", ^{
+                uint8_t bytes[1] = {0};
+                NSData *data = [NSData dataWithBytes:bytes length:1];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(0)];
+                [[theValue(offset) should] equal:theValue(1)];
+            });
+
+            it(@"maps 01 -> 1 and increments the offset", ^{
+                uint8_t bytes[1] = {1};
+                NSData *data = [NSData dataWithBytes:bytes length:1];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(1)];
+                [[theValue(offset) should] equal:theValue(1)];
+            });
+
+            it(@"maps 7F -> 127 and increments the offset", ^{
+                uint8_t bytes[1] = {0x7F};
+                NSData *data = [NSData dataWithBytes:bytes length:1];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(127)];
+                [[theValue(offset) should] equal:theValue(1)];
+            });
+
+            it(@"maps 80 01 -> 128 and increments the offset", ^{
+                uint8_t bytes[2] = {0x80, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:2];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(128)];
+                [[theValue(offset) should] equal:theValue(2)];
+            });
+
+            it(@"maps 82 01 -> 130 and increments the offset", ^{
+                uint8_t bytes[2] = {0x82, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:2];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(130)];
+                [[theValue(offset) should] equal:theValue(2)];
+            });
+
+            it(@"maps 80 80 01 -> 128**2 and increments the offset", ^{
+                uint8_t bytes[3] = {0x80, 0x80, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:3];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(128 * 128)];
+                [[theValue(offset) should] equal:theValue(3)];
+            });
+
+            it(@"maps AC 02 -> 300 and increments the offset", ^{
+                uint8_t bytes[2] = {0xAC, 0x02};
+                NSData *data = [NSData dataWithBytes:bytes length:2];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(300)];
+                [[theValue(offset) should] equal:theValue(2)];
+            });
+
+            it(@"maps F6 BC FD 0E -> 31415926 and increments the offset", ^{
+                uint8_t bytes[4] = {0xF6, 0xBC, 0xFD, 0x0E};
+                NSData *data = [NSData dataWithBytes:bytes length:4];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(31415926)];
+                [[theValue(offset) should] equal:theValue(4)];
+            });
+
+            it(@"maps FE FF FF FF 0F -> (2**32 - 2) and increments the offset", ^{
+                uint8_t bytes[5] = {0xFE, 0xFF, 0xFF, 0xFF, 0x0F};
+                NSData *data = [NSData dataWithBytes:bytes length:5];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(4294967294)];
+                [[theValue(offset) should] equal:theValue(5)];
+            });
+
+            it(@"maps FF FF FF FF 0F -> (2**32 - 1) and increments the offset", ^{
+                uint8_t bytes[5] = {0xFF, 0xFF, 0xFF, 0xFF, 0x0F};
+                NSData *data = [NSData dataWithBytes:bytes length:5];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(4294967295)];
+                [[theValue(offset) should] equal:theValue(5)];
+            });
+        });
+
+        describe(@"larger powers of two", ^{
+
+            it(@"maps 80 80 80 01 -> 128**3 and increments the offset", ^{
+                uint8_t bytes[4] = {0x80, 0x80, 0x80, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:4];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(128 * 128 * 128)];
+                [[theValue(offset) should] equal:theValue(4)];
+            });
+
+            it(@"maps 80 80 80 80 01 -> 128**4 and increments the offset", ^{
+                uint8_t bytes[5] = {0x80, 0x80, 0x80, 0x80, 0x01};
+                NSData *data = [NSData dataWithBytes:bytes length:5];
+                UInt32 offset = 0;
+                [[theValue([Varint128 decode64FromBytes:data.bytes offset:&offset]) should] equal:theValue(128 * 128 * 128 * 128)];
+                [[theValue(offset) should] equal:theValue(5)];
+            });
+        });
+    });
 });
 
 SPEC_END
